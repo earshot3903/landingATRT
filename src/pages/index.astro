@@ -1,11 +1,33 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import BenefitsSection from '../components/BenefitsSection.astro';
+import CareersSection from '../components/CareersSection.astro';
+import FinalCtaSection from '../components/FinalCtaSection.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import MetricsSection from '../components/MetricsSection.astro';
+import Navbar from '../components/Navbar.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
+import TrustSection from '../components/TrustSection.astro';
+import ValueStrip from '../components/ValueStrip.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Auto Transportes Refrigerados Torres | Landing corporativa para transporte refrigerado"
+  description="Landing empresarial moderna de Auto Transportes Refrigerados Torres con enfoque en confianza, monitoreo, puntualidad, seguridad y conversion B2B."
+>
+  <main class="page-shell">
+    <Navbar />
+    <HeroSection />
+    <ValueStrip />
+    <ServicesSection />
+    <BenefitsSection />
+    <MetricsSection />
+    <TrustSection />
+    <TestimonialsSection />
+    <CareersSection />
+    <FinalCtaSection />
+    <Footer />
+  </main>
 </Layout>

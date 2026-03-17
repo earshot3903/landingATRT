@@ -1,0 +1,43 @@
+---
+import { trustBlocks } from '../data/landingContent';
+---
+
+<section id="confianza" class="relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24">
+  <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+    <div>
+      <span class="eyebrow">Confianza y cumplimiento</span>
+      <h2 class="section-title mt-6 text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl">
+        Una marca confiable no solo dice que cumple. Lo demuestra en su forma de operar.
+      </h2>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">
+        La referencia actual puede mejorar mucho en señales de confianza. Esta version refuerza ese frente con mensajes de cumplimiento, control y orden operativo, sin depender de promesas ambiguas.
+      </p>
+
+      <div class="mt-8 overflow-hidden rounded-[2rem] border border-[var(--color-line)] bg-white shadow-[0_24px_60px_rgba(12,62,92,0.08)]">
+        <img
+          src="/camion-secundario-atrt.png"
+          alt="Camion ATRT en operacion"
+          class="h-[280px] w-full object-cover"
+        />
+        <div class="border-t border-[var(--color-line)] p-6">
+          <p class="text-sm font-bold tracking-[0.18em] text-[var(--color-brand)] uppercase">Auto Transportes Refrigerados Torres</p>
+          <p class="mt-3 text-base leading-7 text-[var(--color-muted)]">
+            La confianza tambien se transmite con presencia visual real, unidades identificadas y una operacion que luce tan profesional como se comunica.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-[2rem] border border-[var(--color-line)] bg-[linear-gradient(180deg,rgba(169,214,229,0.3),rgba(255,255,255,0.95))] p-8">
+      <p class="text-sm font-bold tracking-[0.18em] text-[var(--color-brand-strong)] uppercase">Elementos de confianza</p>
+      <div class="mt-7 grid gap-4">
+        {trustBlocks.map((block) => (
+          <article class="rounded-[1.5rem] border border-[var(--color-line)] bg-white/95 p-5">
+            <h3 class="text-xl font-semibold text-[var(--color-ink)]">{block.title}</h3>
+            <p class="mt-3 text-base leading-7 text-[var(--color-muted)]">{block.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

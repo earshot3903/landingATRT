@@ -1,0 +1,62 @@
+---
+import { finalCta } from '../data/landingContent';
+---
+
+<section id="contacto" class="relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24">
+  <div class="overflow-hidden rounded-[2.4rem] border border-[var(--color-line)] bg-[linear-gradient(135deg,rgba(169,214,229,0.42),rgba(255,255,255,0.98),rgba(233,245,250,0.96))] p-8 md:p-12">
+    <div class="grid gap-10 lg:grid-cols-[1fr_0.72fr] lg:items-end">
+      <div>
+        <span class="eyebrow">CTA de cotizacion</span>
+        <h2 class="section-title mt-6 max-w-3xl text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl">
+          {finalCta.title}
+        </h2>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">{finalCta.text}</p>
+
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+          <a
+            href="mailto:comercial@tuempresa.com"
+            class="btn-primary px-7 py-4 text-base"
+          >
+            {finalCta.primary}
+          </a>
+          <a
+            href="tel:+520000000000"
+            class="btn-secondary px-7 py-4 text-base"
+          >
+            {finalCta.secondary}
+          </a>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-[2rem] p-6">
+        <p class="text-sm font-bold tracking-[0.18em] text-[var(--color-brand-strong)] uppercase">Solicitud rapida</p>
+        <form class="mt-6 space-y-4">
+          <input
+            type="text"
+            placeholder="Nombre de empresa"
+            class="w-full rounded-2xl border border-[var(--color-line)] bg-white px-4 py-3 text-[var(--color-text)] outline-none transition placeholder:text-[var(--color-muted)] focus:border-[var(--color-brand-strong)]"
+          />
+          <input
+            type="text"
+            placeholder="Correo o telefono"
+            class="w-full rounded-2xl border border-[var(--color-line)] bg-white px-4 py-3 text-[var(--color-text)] outline-none transition placeholder:text-[var(--color-muted)] focus:border-[var(--color-brand-strong)]"
+          />
+          <textarea
+            rows="4"
+            placeholder="Cuéntanos rutas, frecuencia y tipo de carga"
+            class="w-full rounded-2xl border border-[var(--color-line)] bg-white px-4 py-3 text-[var(--color-text)] outline-none transition placeholder:text-[var(--color-muted)] focus:border-[var(--color-brand-strong)]"
+          ></textarea>
+          <button
+            type="button"
+            class="btn-primary w-full px-6 py-4 text-sm tracking-[0.14em] uppercase"
+          >
+            Enviar solicitud de cotizacion
+          </button>
+          <p class="text-xs leading-5 text-[var(--color-muted)]">
+            Sustituye estos datos por tu correo, telefono o integracion real de formularios.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

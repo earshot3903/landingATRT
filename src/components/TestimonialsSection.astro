@@ -1,0 +1,27 @@
+---
+import { testimonials } from '../data/landingContent';
+---
+
+<section id="testimonios" class="relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24">
+  <div class="max-w-3xl">
+    <span class="eyebrow">Testimonios</span>
+    <h2 class="section-title mt-6 text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl">
+      Prueba social con tono corporativo y creible
+    </h2>
+    <p class="mt-6 text-lg leading-8 text-[var(--color-muted)]">
+      En una landing B2B, los testimonios deben sonar a operaciones reales, no a frases publicitarias. Por eso aqui se presentan con enfoque profesional y orientado a resultados.
+    </p>
+  </div>
+
+  <div class="mt-12 grid gap-5 lg:grid-cols-3">
+    {testimonials.map((item) => (
+      <article class="glass-card rounded-[1.9rem] p-7">
+        <p class="text-lg leading-8 text-[var(--color-text)]">“{item.quote}”</p>
+        <div class="mt-8 border-t border-[var(--color-line)] pt-5">
+          <p class="font-semibold text-[var(--color-ink)]">{item.name}</p>
+          <p class="mt-1 text-sm text-[var(--color-muted)]">{item.company}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

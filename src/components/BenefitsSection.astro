@@ -1,0 +1,57 @@
+---
+import { benefits, whyChooseUs } from '../data/landingContent';
+
+const benefitIcons = [
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 6v6l4 2"></path>
+    <circle cx="12" cy="12" r="8"></circle>
+  </svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4z"></path>
+    <path d="m9.5 12 1.7 1.7L14.8 10"></path>
+  </svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8 10h8"></path>
+    <path d="M8 14h5"></path>
+    <path d="M6 18h12a2 2 0 0 0 2-2V8l-4-4H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"></path>
+    <path d="M14 4v4h4"></path>
+  </svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 17.5 5.8 21l1.2-6.9L2 9.4l7-1 3-6.4 3 6.4 7 1-5 4.7 1.2 6.9z"></path>
+  </svg>`,
+];
+---
+
+<section id="ventajas" class="relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24">
+  <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+    <div class="glass-card rounded-[2rem] p-8">
+      <span class="eyebrow">Por que elegirnos</span>
+      <h2 class="section-title mt-6 text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl">
+        Un proveedor que entiende la exigencia de tu operacion
+      </h2>
+      <p class="mt-6 text-lg leading-8 text-[var(--color-muted)]">
+        Esta seccion reemplaza argumentos vagos por razones concretas para elegir a la empresa: control, capacidad de respuesta, disciplina operativa y enfoque B2B.
+      </p>
+
+      <div class="mt-8 space-y-4">
+        {whyChooseUs.map((item) => (
+          <div class="rounded-3xl border border-[var(--color-line)] bg-[var(--color-surface-alt)] px-5 py-4 text-base leading-7 text-[var(--color-text)]">
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-2">
+      {benefits.map((benefit, index) => (
+        <article class="glass-card rounded-[1.9rem] p-7">
+          <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-alt)] text-[var(--color-brand)]">
+            <Fragment set:html={benefitIcons[index]} />
+          </div>
+          <h3 class="text-2xl font-semibold text-[var(--color-ink)]">{benefit.title}</h3>
+          <p class="mt-4 text-base leading-7 text-[var(--color-muted)]">{benefit.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

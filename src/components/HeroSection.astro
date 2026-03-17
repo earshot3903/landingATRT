@@ -1,0 +1,95 @@
+---
+import { hero } from '../data/landingContent';
+---
+
+<section class="section-grid relative isolate overflow-hidden">
+  <div class="mx-auto grid max-w-7xl gap-14 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
+    <div class="relative z-10">
+      <span class="eyebrow fade-up">{hero.badge}</span>
+      <p class="mt-6 text-sm font-bold tracking-[0.18em] text-[var(--color-brand-strong)] uppercase">
+        Auto Transportes Refrigerados Torres
+      </p>
+      <h1 class="section-title fade-up mt-6 max-w-4xl text-5xl leading-[1.02] font-semibold text-[var(--color-ink)] md:text-6xl xl:text-7xl">
+        {hero.title}
+      </h1>
+      <p class="fade-up-delay mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)] md:text-xl">
+        {hero.subtitle}
+      </p>
+
+      <div class="fade-up-soft mt-9 flex flex-col gap-4 sm:flex-row">
+        <a
+          href="#contacto"
+          class="btn-primary px-7 py-4 text-base"
+        >
+          {hero.primaryCta}
+        </a>
+        <a
+          href="#ventajas"
+          class="btn-secondary px-7 py-4 text-base"
+        >
+          {hero.secondaryCta}
+        </a>
+      </div>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        {hero.proof.map((item) => (
+          <div class="rounded-3xl border border-[var(--color-line)] bg-white/90 px-5 py-5 text-sm leading-6 text-[var(--color-text)] shadow-[0_16px_40px_rgba(12,62,92,0.06)]">
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="relative z-10">
+      <div class="relative overflow-hidden rounded-[2.2rem] border border-[var(--color-line)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(233,245,250,0.96))] p-6 shadow-[0_30px_80px_rgba(12,62,92,0.12)] md:p-8">
+        <div class="relative z-10">
+          <div class="rounded-[1.8rem] border border-[var(--color-line)] bg-[linear-gradient(135deg,rgba(169,214,229,0.26),rgba(255,255,255,0.92))] p-5">
+            <div class="flex items-start justify-between gap-4">
+              <img src="/Azul_Fuerte.png" alt="ATRT - Auto Transportes Refrigerados Torres" class="h-14 w-auto object-contain" />
+              <span class="rounded-full border border-emerald-600/15 bg-emerald-500/10 px-3 py-1 text-xs font-bold tracking-[0.16em] text-emerald-700 uppercase">
+                En ruta
+              </span>
+            </div>
+
+            <div class="relative mt-6 overflow-hidden rounded-[1.6rem] border border-white/55 bg-slate-100">
+              <img
+                src="/hero-camion-atrt.png"
+                alt="Unidad refrigerada de Auto Transportes Refrigerados Torres"
+                class="h-[340px] w-full object-cover"
+              />
+              <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(1,42,74,0.02),rgba(1,42,74,0.34))]"></div>
+              <div class="absolute left-4 top-4 max-w-[270px] rounded-[1.3rem] border border-white/50 bg-white/88 p-4 backdrop-blur-sm">
+                <p class="text-sm font-bold tracking-[0.2em] text-[var(--color-brand-strong)] uppercase">Centro de control</p>
+                <p class="mt-3 text-2xl leading-tight font-semibold text-[var(--color-ink)]">Operacion con visibilidad y respuesta</p>
+                <p class="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+                  Auto Transportes Refrigerados Torres coordina trayectos con monitoreo, puntualidad y seguimiento operativo.
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-[1.3rem] border border-[var(--color-line)] bg-white p-4">
+                <p class="text-xs font-bold tracking-[0.18em] text-[var(--color-muted)] uppercase">Monitoreo</p>
+                <p class="mt-2 text-2xl font-semibold text-[var(--color-ink)]">24/7</p>
+                <p class="mt-2 text-sm leading-6 text-[var(--color-muted)]">Seguimiento operativo continuo para trayectos activos.</p>
+              </div>
+              <div class="rounded-[1.3rem] border border-[var(--color-line)] bg-white p-4">
+                <p class="text-xs font-bold tracking-[0.18em] text-[var(--color-muted)] uppercase">Cumplimiento</p>
+                <p class="mt-2 text-2xl font-semibold text-[var(--color-ink)]">Puntual</p>
+                <p class="mt-2 text-sm leading-6 text-[var(--color-muted)]">Planeacion coordinada para ventanas de entrega comprometidas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-[1.6rem] border border-[var(--color-line)] bg-[linear-gradient(135deg,#012a4a,#013a63)] p-6">
+            <p class="text-sm font-bold tracking-[0.2em] text-[var(--color-soft)] uppercase">Mensaje comercial</p>
+            <h2 class="section-title mt-4 text-2xl leading-tight font-semibold text-white">
+              {hero.persuasiveTitle}
+            </h2>
+            <p class="mt-4 text-base leading-7 text-[rgba(233,245,250,0.78)]">{hero.persuasiveText}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
