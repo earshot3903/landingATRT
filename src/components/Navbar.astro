@@ -2,31 +2,33 @@
 import { navItems } from '../data/landingContent';
 ---
 
-<header class="sticky top-0 z-50 border-b border-[var(--color-line)] bg-[rgba(255,255,255,0.8)] backdrop-blur-xl">
+<header class="sticky top-0 z-50 border-b border-[var(--color-line)] bg-[rgba(255,255,255,0.8)] backdrop-blur-xl fade-in-up" data-delay="0">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-    <a href="#" class="group flex items-center">
+    <a href="#" class="group flex items-center" aria-label="Ir al inicio">
       <img
         src="/Negro.png"
         alt="ATRT - Auto Transportes Refrigerados Torres"
-        class="h-14 w-auto object-contain transition duration-300 group-hover:-translate-y-0.5 group-hover:scale-[1.02] lg:h-25"
+        class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.015] lg:h-16"
       />
     </a>
 
     <nav class="hidden items-center gap-7 text-sm text-[var(--color-muted)] lg:flex">
-      {navItems.map((item) => (
+      {navItems.map((item, index) => (
         <a
           href={item.href}
-          class="group relative py-2 font-medium tracking-[0.02em] transition duration-300 hover:text-[var(--color-ink)]"
+          class="nav-link-underline group relative py-2 font-medium tracking-[0.02em] transition-colors duration-300 hover:text-[var(--color-ink)]"
+          style={`--delay: ${index * 80}ms`}
         >
-          <span>{item.label}</span>
-          <span class="absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-[var(--color-brand)] transition duration-300 group-hover:scale-x-100"></span>
+          <span class="reveal" data-delay={index * 80}>{item.label}</span>
+          <span class="absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-[var(--color-brand)] transition-transform duration-500 ease-out-expo group-hover:scale-x-100"></span>
         </a>
       ))}
     </nav>
 
     <a
       href="#contacto"
-      class="btn-primary hidden px-5 py-3 text-sm transition duration-300 hover:shadow-[0_22px_42px_rgba(1,79,134,0.3)] lg:inline-flex"
+      class="btn-primary hidden px-5 py-3 text-sm transition-all duration-300 hover:shadow-[0_24px_48px_rgba(1,79,134,0.28)] lg:inline-flex reveal"
+      data-delay="600"
     >
       Cotizar ahora
     </a>

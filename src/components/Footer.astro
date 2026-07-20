@@ -2,11 +2,11 @@
 import { footer, navItems } from '../data/landingContent';
 ---
 
-<footer class="relative z-10 mt-10 border-t border-white/8 bg-[var(--color-ink)] text-white">
+<footer class="relative z-10 mt-10 border-t border-white/8 bg-[var(--color-ink)] text-white reveal-up" data-delay="100">
   <div class="mx-auto grid max-w-7xl gap-10 px-6 py-10 lg:grid-cols-[1.1fr_0.7fr_0.8fr] lg:px-8">
-    <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/4 p-6">
-      <div class="relative z-10">
-        <img src="/atrtblanco.png" alt="Auto Transportes Refrigerados Torres" class="h-14 w-auto object-contain" />
+    <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/4 p-6 reveal-left" data-delay="100">
+      <div class="relative z-10 reveal-up" data-delay="0">
+        <img src="/atrtblanco.png" alt="Auto Transportes Refrigerados Torres" class="h-14 w-auto object-contain animate-scale-in" style="animation-delay: 200ms;" />
         <p class="mt-5 font-['Sora'] text-lg font-semibold text-white">{footer.company}</p>
         <p class="mt-4 max-w-xl text-base leading-7 text-[var(--color-muted)]">{footer.description}</p>
       </div>
@@ -14,30 +14,30 @@ import { footer, navItems } from '../data/landingContent';
       <img
         src="/camionblanco.png"
         alt="Camion ATRT"
-        class="pointer-events-none absolute -right-6 bottom-0 h-28 w-auto opacity-18 md:h-32"
+        class="pointer-events-none absolute -right-6 bottom-0 h-28 w-auto opacity-18 md:h-32 floating-slow"
       />
     </div>
 
-    <div class="pt-2">
+    <div class="pt-2 reveal-up" data-delay="200">
       <p class="text-sm font-bold tracking-[0.18em] text-[var(--color-soft)] uppercase">Navegacion</p>
-      <div class="mt-4 flex flex-col gap-3 text-sm text-white/80">
-        {navItems.map((item) => (
-          <a href={item.href} class="transition hover:text-white">{item.label}</a>
+      <div class="mt-4 flex flex-col gap-3 text-sm text-white/80" data-stagger>
+        {navItems.map((item, index) => (
+          <a href={item.href} class="transition-colors duration-300 hover:text-white reveal-up" data-stagger-item data-delay={index * 60}>{item.label}</a>
         ))}
       </div>
     </div>
 
-    <div class="pt-2">
+    <div class="pt-2 reveal-up" data-delay="300">
       <p class="text-sm font-bold tracking-[0.18em] text-[var(--color-soft)] uppercase">Mensaje comercial</p>
-      <div class="mt-4 flex flex-col gap-3 text-sm leading-6 text-[var(--color-muted)]">
-        {footer.contact.map((item) => (
-          <p>{item}</p>
+      <div class="mt-4 flex flex-col gap-3 text-sm leading-6 text-[var(--color-muted)]" data-stagger>
+        {footer.contact.map((item, index) => (
+          <p class="reveal-up" data-stagger-item data-delay={index * 60}>{item}</p>
         ))}
       </div>
     </div>
   </div>
 
-  <div class="border-t border-white/8">
+  <div class="border-t border-white/8 reveal-up" data-delay="400">
     <div class="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-sm text-white/55 lg:flex-row lg:items-center lg:justify-between lg:px-8">
       <p>Auto Transportes Refrigerados Torres</p>
       <p>Transporte refrigerado con enfoque empresarial, seguimiento y cumplimiento operativo.</p>

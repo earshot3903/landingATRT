@@ -2,16 +2,16 @@
 import { careers, jobOpenings } from '../data/landingContent';
 ---
 
-<section id="vacantes" class="relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24">
+<section id="vacantes" class="section-watermark section-watermark--blue section-watermark--left relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24 reveal-up" data-delay="100">
   <div class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
-    <div class="glass-card rounded-[2rem] p-8">
-      <span class="eyebrow">Talento ATRT</span>
-      <h2 class="section-title mt-6 text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl">
+    <div class="glass-card rounded-[2rem] p-8 reveal-left" data-delay="100">
+      <span class="eyebrow hero-reveal" data-delay="0">Talento ATRT</span>
+      <h2 class="section-title hero-reveal mt-6 text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl" data-delay="120">
         {careers.title}
       </h2>
-      <p class="mt-6 text-lg leading-8 text-[var(--color-muted)]">{careers.subtitle}</p>
+      <p class="hero-reveal mt-6 text-lg leading-8 text-[var(--color-muted)]" data-delay="240">{careers.subtitle}</p>
 
-      <div class="mt-8 space-y-4 rounded-[1.5rem] border border-[var(--color-line)] bg-[var(--color-surface-alt)] p-5">
+      <div class="mt-8 space-y-4 rounded-[1.5rem] border border-[var(--color-line)] bg-[var(--color-surface-alt)] p-5 reveal-up" data-delay="360">
         <div>
           <p class="text-xs font-bold tracking-[0.18em] text-[var(--color-brand-strong)] uppercase">Ubicacion base</p>
           <p class="mt-2 text-base font-semibold text-[var(--color-ink)]">{careers.location}</p>
@@ -24,14 +24,14 @@ import { careers, jobOpenings } from '../data/landingContent';
         </div>
       </div>
 
-      <a href={`tel:+52${careers.contactPhone.replaceAll(' ', '')}`} class="btn-primary mt-8 px-7 py-4 text-base">
+      <a href={`tel:+52${careers.contactPhone.replaceAll(' ', '')}`} class="btn-primary mt-8 px-7 py-4 text-base reveal-up" data-delay="480">
         {careers.ctaLabel}
       </a>
     </div>
 
-    <div class="grid gap-5">
-      {jobOpenings.map((job) => (
-        <article class="glass-card rounded-[1.9rem] p-7">
+    <div class="grid gap-5" data-stagger>
+      {jobOpenings.map((job, index) => (
+        <article class="glass-card rounded-[1.9rem] p-7 reveal-up" data-stagger-item data-delay={index * 100}>
           <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div>
               <p class="text-sm font-bold tracking-[0.18em] text-[var(--color-brand-strong)] uppercase">Vacante abierta</p>
@@ -45,8 +45,8 @@ import { careers, jobOpenings } from '../data/landingContent';
 
           <p class="mt-5 text-base leading-7 text-[var(--color-muted)]">{job.summary}</p>
 
-          <div class="mt-6 grid gap-4 md:grid-cols-2">
-            <div class="rounded-[1.4rem] border border-[var(--color-line)] bg-white p-5">
+          <div class="mt-6 grid gap-4 md:grid-cols-2" data-stagger>
+            <div class="rounded-[1.4rem] border border-[var(--color-line)] bg-white p-5 reveal-up" data-stagger-item data-delay={index * 80}>
               <p class="text-sm font-bold tracking-[0.16em] text-[var(--color-brand)] uppercase">Requisitos</p>
               <ul class="mt-4 space-y-3 text-sm leading-6 text-[var(--color-text)]">
                 {job.requirements.map((item) => (
@@ -55,7 +55,7 @@ import { careers, jobOpenings } from '../data/landingContent';
               </ul>
             </div>
 
-            <div class="rounded-[1.4rem] border border-[var(--color-line)] bg-white p-5">
+            <div class="rounded-[1.4rem] border border-[var(--color-line)] bg-white p-5 reveal-up" data-stagger-item data-delay={index * 80 + 40}>
               <p class="text-sm font-bold tracking-[0.16em] text-[var(--color-brand)] uppercase">Ofrecemos</p>
               <ul class="mt-4 space-y-3 text-sm leading-6 text-[var(--color-text)]">
                 {job.benefits.map((item) => (

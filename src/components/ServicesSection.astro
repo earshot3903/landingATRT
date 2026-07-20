@@ -2,21 +2,21 @@
 import { services } from '../data/landingContent';
 ---
 
-<section id="servicios" class="relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24">
+<section id="servicios" class="relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24 reveal-up" data-delay="100">
   <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
-    <div class="max-w-3xl">
-      <span class="eyebrow">Servicios</span>
-      <h2 class="section-title mt-6 text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl">
+    <div class="max-w-3xl reveal-left" data-delay="100">
+      <span class="eyebrow hero-reveal" data-delay="0">Servicios</span>
+      <h2 class="section-title hero-reveal mt-6 text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl" data-delay="120">
         Soluciones de transporte refrigerado para operaciones que no pueden fallar
       </h2>
-      <p class="mt-6 text-lg leading-8 text-[var(--color-muted)]">
+      <p class="hero-reveal mt-6 text-lg leading-8 text-[var(--color-muted)]" data-delay="240">
         La propuesta comercial debe dejar de sonar genérica. Por eso la oferta se presenta con foco en continuidad operativa, calidad del servicio y visibilidad durante el traslado.
       </p>
     </div>
 
-    <div class="glass-card relative overflow-hidden rounded-[2rem] p-6 md:p-7">
+    <div class="glass-card relative overflow-hidden rounded-[2rem] p-6 md:p-7 reveal-right" data-delay="200">
       <div class="relative z-10 grid gap-6 md:grid-cols-[0.95fr_1.05fr] md:items-center">
-        <div>
+        <div class="reveal-up" data-delay="100">
           <p class="text-sm font-bold tracking-[0.18em] text-[var(--color-brand-strong)] uppercase">Flota y presencia visual</p>
           <h3 class="mt-4 text-2xl font-semibold text-[var(--color-ink)]">
             Auto Transportes Refrigerados Torres respalda cada servicio con presencia real en carretera
@@ -26,13 +26,14 @@ import { services } from '../data/landingContent';
           </p>
         </div>
 
-        <div class="relative overflow-hidden rounded-[1.7rem] border border-[var(--color-line)] bg-[var(--color-surface-alt)]">
+        <div class="relative aspect-[4/3] overflow-hidden rounded-[1.7rem] border border-[var(--color-line)] bg-[var(--color-surface-alt)] reveal-scale" data-delay="200">
           <img
             src="/camion-servicios-atrt.png"
             alt="Unidad de Auto Transportes Refrigerados Torres en carretera"
-            class="h-[260px] w-full object-cover"
+            class="h-full w-full object-cover animate-scale-in"
+            style="animation-delay: 300ms;"
           />
-          <div class="absolute inset-x-4 bottom-4 rounded-[1.2rem] border border-white/45 bg-white/86 p-4 backdrop-blur-sm">
+          <div class="absolute inset-x-4 bottom-4 rounded-[1.2rem] border border-white/45 bg-white/86 p-4 backdrop-blur-sm reveal-up" data-delay="400">
             <p class="text-sm font-bold tracking-[0.16em] text-[var(--color-brand)] uppercase">Cobertura y flota</p>
             <p class="mt-2 text-sm leading-6 text-[var(--color-text)]">
               Unidades identificadas, operacion visible y una imagen de marca coherente con el nivel de servicio que prometemos.
@@ -43,15 +44,15 @@ import { services } from '../data/landingContent';
     </div>
   </div>
 
-  <div class="mt-12 grid gap-5 lg:grid-cols-2">
+  <div class="mt-12 grid gap-5 lg:grid-cols-2" data-stagger>
       {services.map((service, index) => (
-        <article class="glass-card rounded-[1.9rem] p-7 md:p-8">
+        <article class="glass-card rounded-[1.9rem] p-7 md:p-8 reveal-up icon-hover" data-stagger-item data-delay={index * 100}>
         <div class="flex items-start justify-between gap-4">
           <div>
             <p class="text-sm font-bold tracking-[0.18em] text-[var(--color-soft)] uppercase">Servicio {index + 1}</p>
             <h3 class="mt-4 text-2xl font-semibold text-[var(--color-ink)]">{service.title}</h3>
           </div>
-          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-alt)] text-lg font-bold text-[var(--color-brand)]">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-alt)] text-lg font-bold text-[var(--color-brand)] card-icon">
             0{index + 1}
           </div>
         </div>

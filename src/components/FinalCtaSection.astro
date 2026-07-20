@@ -2,49 +2,62 @@
 import { finalCta } from '../data/landingContent';
 ---
 
-<section id="contacto" class="relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24">
+<section id="contacto" class="relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24 reveal-up" data-delay="100">
   <div class="overflow-hidden rounded-[2.4rem] border border-[var(--color-line)] bg-[linear-gradient(135deg,rgba(169,214,229,0.42),rgba(255,255,255,0.98),rgba(233,245,250,0.96))] p-8 md:p-12">
     <div class="grid gap-10 lg:grid-cols-[1fr_0.72fr] lg:items-end">
-      <div>
-        <span class="eyebrow">CTA de cotizacion</span>
-        <h2 class="section-title mt-6 max-w-3xl text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl">
+      <div class="reveal-left" data-delay="100">
+        <span class="eyebrow hero-reveal" data-delay="0">CTA de cotizacion</span>
+        <h2 class="section-title hero-reveal mt-6 max-w-3xl text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl" data-delay="120">
           {finalCta.title}
         </h2>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">{finalCta.text}</p>
+        <p class="hero-reveal mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]" data-delay="240">{finalCta.text}</p>
 
         <div class="mt-8 flex flex-col gap-4 sm:flex-row">
           <a
             href="mailto:comercial@tuempresa.com"
-            class="btn-primary px-7 py-4 text-base"
+            class="btn-primary px-7 py-4 text-base hero-reveal"
+            data-delay="360"
           >
             {finalCta.primary}
           </a>
           <a
             href="tel:+520000000000"
-            class="btn-secondary px-7 py-4 text-base"
+            class="btn-secondary px-7 py-4 text-base hero-reveal"
+            data-delay="400"
           >
             {finalCta.secondary}
           </a>
         </div>
       </div>
 
-      <div class="glass-card rounded-[2rem] p-6">
+      <div class="glass-card rounded-[2rem] p-6 reveal-right" data-delay="200">
         <p class="text-sm font-bold tracking-[0.18em] text-[var(--color-brand-strong)] uppercase">Solicitud rapida</p>
-        <form class="mt-6 space-y-4">
+        <form class="mt-6 space-y-4 reveal-up" data-delay="100" aria-label="Solicitud rapida de cotizacion">
+          <label for="company" class="sr-only">Nombre de empresa</label>
           <input
+            id="company"
+            name="company"
             type="text"
+            autocomplete="organization"
             placeholder="Nombre de empresa"
-            class="w-full rounded-2xl border border-[var(--color-line)] bg-white px-4 py-3 text-[var(--color-text)] outline-none transition placeholder:text-[var(--color-muted)] focus:border-[var(--color-brand-strong)]"
+            class="input-field w-full rounded-2xl border border-[var(--color-line)] bg-white px-4 py-3 text-[var(--color-text)] outline-none transition placeholder:text-[var(--color-muted)] focus:border-[var(--color-brand-strong)]"
           />
+          <label for="contact" class="sr-only">Correo o telefono</label>
           <input
+            id="contact"
+            name="contact"
             type="text"
+            autocomplete="email"
             placeholder="Correo o telefono"
-            class="w-full rounded-2xl border border-[var(--color-line)] bg-white px-4 py-3 text-[var(--color-text)] outline-none transition placeholder:text-[var(--color-muted)] focus:border-[var(--color-brand-strong)]"
+            class="input-field w-full rounded-2xl border border-[var(--color-line)] bg-white px-4 py-3 text-[var(--color-text)] outline-none transition placeholder:text-[var(--color-muted)] focus:border-[var(--color-brand-strong)]"
           />
+          <label for="operation" class="sr-only">Rutas, frecuencia y tipo de carga</label>
           <textarea
+            id="operation"
+            name="operation"
             rows="4"
             placeholder="Cuéntanos rutas, frecuencia y tipo de carga"
-            class="w-full rounded-2xl border border-[var(--color-line)] bg-white px-4 py-3 text-[var(--color-text)] outline-none transition placeholder:text-[var(--color-muted)] focus:border-[var(--color-brand-strong)]"
+            class="input-field w-full rounded-2xl border border-[var(--color-line)] bg-white px-4 py-3 text-[var(--color-text)] outline-none transition placeholder:text-[var(--color-muted)] focus:border-[var(--color-brand-strong)]"
           ></textarea>
           <button
             type="button"

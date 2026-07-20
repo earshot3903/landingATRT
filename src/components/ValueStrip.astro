@@ -2,10 +2,10 @@
 import { valuePillars } from '../data/landingContent';
 ---
 
-<section class="relative z-10">
-  <div class="mx-auto -mt-5 grid max-w-7xl gap-4 px-6 pb-8 lg:grid-cols-3 lg:px-8">
-    {valuePillars.map((pillar) => (
-      <article class="glass-card rounded-[1.75rem] p-6">
+<section class="relative z-10 reveal-up" data-delay="100">
+  <div class="mx-auto -mt-5 grid max-w-7xl gap-4 px-6 pb-8 lg:grid-cols-3 lg:px-8" data-stagger>
+    {valuePillars.map((pillar, index) => (
+      <article class="glass-card rounded-[1.75rem] p-6 reveal-up" data-stagger-item data-delay={index * 100}>
         <p class="text-sm font-bold tracking-[0.18em] text-[var(--color-brand-strong)] uppercase">{pillar.title}</p>
         <p class="mt-4 text-base leading-7 text-[var(--color-muted)]">{pillar.text}</p>
       </article>

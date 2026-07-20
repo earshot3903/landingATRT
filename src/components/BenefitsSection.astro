@@ -22,9 +22,9 @@ const benefitIcons = [
 ];
 ---
 
-<section id="ventajas" class="relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24">
+<section id="ventajas" class="section-watermark section-watermark--dark relative z-10 mx-auto max-w-7xl px-6 py-18 lg:px-8 lg:py-24 reveal-up" data-delay="100">
   <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-    <div class="glass-card rounded-[2rem] p-8">
+    <div class="glass-card rounded-[2rem] p-8 reveal-left" data-delay="100">
       <span class="eyebrow">Por que elegirnos</span>
       <h2 class="section-title mt-6 text-4xl leading-tight font-semibold text-[var(--color-ink)] md:text-5xl">
         Un proveedor que entiende la exigencia de tu operacion
@@ -33,19 +33,19 @@ const benefitIcons = [
         Esta seccion reemplaza argumentos vagos por razones concretas para elegir a la empresa: control, capacidad de respuesta, disciplina operativa y enfoque B2B.
       </p>
 
-      <div class="mt-8 space-y-4">
-        {whyChooseUs.map((item) => (
-          <div class="rounded-3xl border border-[var(--color-line)] bg-[var(--color-surface-alt)] px-5 py-4 text-base leading-7 text-[var(--color-text)]">
+      <div class="mt-8 space-y-4" data-stagger>
+        {whyChooseUs.map((item, index) => (
+          <div class="rounded-3xl border border-[var(--color-line)] bg-[var(--color-surface-alt)] px-5 py-4 text-base leading-7 text-[var(--color-text)] reveal-up" data-stagger-item data-delay={index * 80}>
             {item}
           </div>
         ))}
       </div>
     </div>
 
-    <div class="grid gap-5 md:grid-cols-2">
+    <div class="grid gap-5 md:grid-cols-2" data-stagger>
       {benefits.map((benefit, index) => (
-        <article class="glass-card rounded-[1.9rem] p-7">
-          <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-alt)] text-[var(--color-brand)]">
+        <article class="glass-card rounded-[1.9rem] p-7 reveal-up icon-hover" data-stagger-item data-delay={index * 100}>
+          <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-alt)] text-[var(--color-brand)] card-icon">
             <Fragment set:html={benefitIcons[index]} />
           </div>
           <h3 class="text-2xl font-semibold text-[var(--color-ink)]">{benefit.title}</h3>
