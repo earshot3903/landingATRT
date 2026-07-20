@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atrt.com.mx/sitemap.xml

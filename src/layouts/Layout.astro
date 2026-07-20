@@ -10,6 +10,17 @@ const {
 	title = 'Auto Transportes Refrigerados Torres | Transporte confiable de carga con control de temperatura',
 	description = 'Soluciones empresariales de transporte refrigerado de Auto Transportes Refrigerados Torres, con monitoreo, seguridad operativa, puntualidad y atencion personalizada para clientes B2B.',
 } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://atrt.com.mx');
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+const socialImageUrl = new URL('/hero-camion-atrt.png', siteUrl);
+const organizationSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	name: 'Auto Transportes Refrigerados Torres',
+	url: siteUrl.href,
+	logo: new URL('/Negro.png', siteUrl).href,
+};
 ---
 
 <!doctype html>
@@ -20,7 +31,21 @@ const {
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
 		<meta name="theme-color" content="#081a2c" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="es_MX" />
+		<meta property="og:site_name" content="Auto Transportes Refrigerados Torres" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={socialImageUrl} />
+		<meta property="og:image:alt" content="Unidad refrigerada de Auto Transportes Refrigerados Torres" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={socialImageUrl} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -28,6 +53,7 @@ const {
 			rel="stylesheet"
 		/>
 		<title>{title}</title>
+		<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
 	</head>
 	<body class="bg-[var(--color-surface)] text-[var(--color-text)] antialiased">
 		<div class="page-shell">
